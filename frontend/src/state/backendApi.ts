@@ -295,7 +295,7 @@ const apiStore = {
                 api.userData = await r.json() as UserData;
             } else if (r.status == 401) { // unauthorized / not logged in
                 api.userData = null;
-            } else if (r.status == 404) {
+            } else if (r.status == 405) {
                 // not found: frontend is configured as business-version, but backend is non-business-version
                 // -> create a local fake user for debugging
                 uiState.isUsingDebugUserLogin = true;
